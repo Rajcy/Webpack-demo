@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--提取调用htmlWebpackPlugin中的title-->
+	<title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!--手动提取打包entry的调用-->
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.a.entry %>"></script>
+
+</head>
+<body>
+
+
+<!--Webpack动态更新HTML时需要更新插件-->
+<!--npm install html-webpack-plugin --save-dev -->
+
+<p><%= htmlWebpackPlugin.options.date %></p>
+
+<!--遍历htmlWebpackPlugin中的全部内容-->
+<!-- <% for(var key in htmlWebpackPlugin.files){ %>
+  <%= key %> : <%= JSON.stringify(htmlWebpackPlugin.files[key]) %>
+<% } %>
+
+<% for(var key in htmlWebpackPlugin.options){ %>
+  <%= key %> : <%= JSON.stringify(htmlWebpackPlugin.options[key]) %>
+<% } %> -->
+</body>
+</html>
